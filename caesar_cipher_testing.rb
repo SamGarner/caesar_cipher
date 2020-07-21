@@ -38,11 +38,15 @@ character_split.each do |character|
 	if character.match(/\p{Lower}/) && alphabet.include?(character)
 		placement = alphabet.index(character)
 		new_placement = placement + shift
-		new_string_elements.push(alphabet[new_placement])
+		number_of_wraps = new_placement/26
+		final_placement = new_placement-(26*number_of_wraps)
+		new_string_elements.push(alphabet[final_placement])
 	elsif character.match(/\p{Upper}/) && alphabet.include?(character.downcase)
 		placement = alphabet.index(character.downcase)
 		new_placement = placement + shift
-		new_string_elements.push(alphabet[new_placement].upcase)
+		number_of_wraps = new_placement/26
+		final_placement = new_placement-(26*number_of_wraps)
+		new_string_elements.push(alphabet[final_placement].upcase)
 	else
 		new_string_elements.push(character)
 	end
