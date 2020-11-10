@@ -5,7 +5,7 @@ shift = gets.chomp.to_i
 
 new_string_elements = []
 alphabet  = ('a'..'z').to_a
-character_split = phrase.split("")
+character_split = phrase.split('')
 
 character_split.each do |character|
 
